@@ -1,0 +1,4 @@
+# Specific config for Interceptor Unit 01
+mavlink:
+  sysid: 1
+  compid: 1

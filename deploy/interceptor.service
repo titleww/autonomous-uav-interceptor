@@ -1,0 +1,14 @@
+[Unit]
+Description=Autonomous UAV Interceptor AI Interceptor Main Service
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/Autonomous-UAV-Interceptor
+ExecStart=/usr/bin/python3 src/main.py
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,30 @@
+# Default System Configuration
+camera:
+  type: "IMX500"
+  resolution: [640, 480] # NTSC/PAL standard for TV Out
+  fps: 30
+
+flight_controller:
+  port: "/dev/serial0"
+  baudrate: 115200
+  protocol: "MAVLink" # ArduPilot/INAV compatible
+
+guidance:
+  algorithm: "HYBRID" # "PN", "PID", or "HYBRID"
+  pn:
+    nav_constant: 3.0
+    closing_velocity: 15.0 # m/s
+    max_lateral_velocity: 5.0 # m/s
+    max_vertical_velocity: 3.0 # m/s
+    filter_alpha: 0.3
+  pid:
+    kp: 8.0 # Tuned for fast alignment
+    ki: 0.5
+    kd: 0.8
+  search:
+    yaw_rate: 0.5 # rad/s (approx 30 deg/s) scan rate
+  recover:
+    align_threshold: 0.1 # target must be within 10% of image center
+    align_duration: 0.5 # target must remain aligned for 0.5 seconds before PN strike
+
+

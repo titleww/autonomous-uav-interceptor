@@ -1,0 +1,13 @@
+# Environments
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Model weights (Large files)
+models/imx500/*.rpk
+
+# IDE
+.vscode/
+.idea/
